@@ -1,0 +1,94 @@
+{% extends 'menu.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="uk-section uk-padding-large" style="background-color: #f9f6f1;">
+    <!-- <div uk-grid> -->
+        <div style="max-width: 400px;">
+
+            <h2 style="font-weight: 800;">Welcome to YelpCamp!</h2>
+            <p class="uk-margin-small">View our hand-picked campgrounds from all over the world, or add your own.</p>
+
+            <form action="">
+                <div class="uk-margin">
+                    <div>
+
+                        <div class="uk-inline" >
+                            <span class="uk-form-icon" uk-icon="icon: search"></span>
+                            <input class="uk-input uk-form-width-medium" type="text" placeholder="Seach for camps">
+
+                        </div>
+                        <button class="uk-button uk-button-secondary uk-margin-small">Search</button>
+
+                    </div>
+                    <a class="uk-link-muted" href="{% url 'campgrounds:add' %}">Or add your own campground</a>
+                </div>
+            </form>
+
+        </div>
+    <!-- </div> -->
+</div>
+
+<div class="uk-section">
+
+    <div class="uk-child-width-1-2@s uk-child-width-1-2@m uk-child-width-1-3@l " uk-grid uk-height-match="target: > div > .uk-card">
+
+        <div>
+
+            <div class="uk-card uk-card-small uk-card-default uk-padding-small camp-card">
+
+                <div class="uk-card-media-top">
+                    <img src="{% static 'assets/camp_images/compressed/4.jpg' %}" alt="">
+                </div>
+
+                <div class="">
+                    <p class="camp-card-title">Media Top</p>
+                    <p class="camp-card-desc uk-margin-large-right">One of the most famous hikes in Benguet is Mt Ulap in Itogon</p>
+                    <a href="{% url 'campgrounds:ind' %}"><button class="uk-button uk-button-default camp-card-btn">View Campground</button></a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <div class="uk-card uk-card-small uk-card-default uk-padding-small camp-card">
+
+                <div class="uk-card-media-top">
+                    <img src="{% static 'assets/camp_images/compressed/2.jpg' %}" alt="">
+                </div>
+
+                <div class="">
+                    <p class="camp-card-title">Media Top</p>
+                    <p class="camp-card-desc uk-margin-large-right">A paradise of islands that can rival the white sand beauty of Boracay</p>
+                    <button class="uk-button uk-button-default camp-card-btn">View Campground</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <div class="uk-card uk-card-small uk-card-default uk-padding-small camp-card">
+
+                <div class="uk-card-media-top">
+                    <img src="{% static 'assets/camp_images/compressed/2.jpg' %}" alt="">
+                </div>
+
+                <div class="">
+                    <p class="camp-card-title">Media Top</p>
+                    <p class="camp-card-desc uk-margin-large-right">A paradise of islands that can rival the white sand beauty of Boracay</p>
+                    <button class="uk-button uk-button-default camp-card-btn">View Campground</button>
+                </div>
+
+            </div>
+            
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

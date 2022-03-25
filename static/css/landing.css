@@ -1,0 +1,50 @@
+.hero-title {
+    color: #000;
+    font-weight: 700;
+    font-size: 3.4rem;
+    margin-bottom: 4px;
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.side-img {
+    height: 100%; 
+    background-size: cover;
+    width: 100%;
+}
+
+.img-mobile {
+    display: none;
+    height: 400px;
+    background-size: cover;
+    background-position: 45%;
+    margin: 0 -30px;
+}
+
+@media screen and (max-width: 900px) {
+    .side-img {
+        display: none;
+    }
+
+    .img-mobile {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .padding-small\@s {
+        padding: 15px;
+    }
+
+    .margin-top\@s {
+        margin-top: 20px;
+    }
+}

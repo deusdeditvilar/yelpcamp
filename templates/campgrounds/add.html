@@ -1,0 +1,43 @@
+{% extends 'menu.html' %}
+
+{% block content %}
+
+<div class="uk-margin">
+
+    <div class="uk-width-xlarge uk-margin-auto">
+
+        <form>
+            <fieldset class="uk-fieldset">
+        
+                <h2 class="uk-text-left">Add New Campground</h2>
+        
+                <div class="uk-margin">
+                    <p class="yelp-label">Campground Name</p>
+                    <input class="yelp-input" type="text" placeholder="Seven Sisters Waterfall">
+                </div>
+        
+                <div class="uk-margin">
+                    <p class="yelp-label">Price</p>
+                    <input class="yelp-input" type="text" placeholder="$149">
+                </div>
+
+                <div class="uk-margin">
+                    <p class="yelp-label">Image</p>
+                    <input class="yelp-input" type="text" placeholder="www.thepinoytraveler.com/2018/01/mt-ulap-diy-dayhike.html">
+                </div>
+
+                <div class="uk-margin">
+                    <p class="yelp-label">Description</p>
+                    <!-- <textarea class="yelp-input" placeholder="Input"> -->
+                    <textarea class="yelp-input" placeholder="The Seven Sisters is the 39th tallest waterfall in Norway. The 410-metre tall waterfall consists of seven separate streams, and the tallest of the seven has a free fall that measures 250 metres. The waterfall is located along the Geirangerfjorden in Stranda Municipality in Møre og Romsdal county, Norway." 
+                    name="" id="" cols="30" rows="10"></textarea>    
+                </div>
+        
+            </fieldset>
+        </form>
+    </div>
+
+
+</div>
+
+{% endblock  %}

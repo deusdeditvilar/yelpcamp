@@ -1,0 +1,67 @@
+{% extends 'divider.html' %}
+{% load static %}
+
+
+{% block menu %}
+<div class="uk-navbar-right">
+    <a class="uk-link-muted" href="{% url 'account:home' %}"> &#129044; Back to campgrounds</a>
+</div>
+{% endblock %}
+
+{% block first %}
+     
+            <div>
+        
+                <form>
+                    <fieldset class="uk-fieldset">
+                
+                        <h1 class="">Start exploring camps from all around the world</h1>
+                
+                        <div class="uk-margin">
+                            <p class="uk-margin-small-bottom">Username</p>
+                            <!-- <input class="uk-input" type="text" placeholder="Input"> -->
+                            <input class="yelp-input" placeholder="johndoe_91" type="text" name="" id="">
+                        </div>
+                
+                        <div class="uk-margin">
+                            <p class="uk-margin-small-bottom">Password</p>
+                            <!-- <input class="uk-input" type="text" placeholder="Input"> -->
+                            <input class="yelp-input" placeholder="Enter your Password" type="password" name="" id="">
+                        </div>
+    
+                        <button class="uk-button uk-button-secondary yelp-btn">{{btntext}}</button>
+
+                        {% if login %}
+                        <span>Not a user yet? <a href="">Create an account</a></span>
+                        {% else %}
+                        <span>Already a user? <a href="">Sign in</a></span>
+                        {% endif %}
+                
+                    </fieldset>
+                </form>
+        
+        
+            </div>
+
+
+{% endblock  %}
+
+
+{% block second %}
+
+<div class="uk-position-relative uk-flex aside" style="">
+    <div class="padding-large@l padding-small@m">
+        <div class="padding@l">
+            <h2 class="testimony">"YelpCamp has honestly saved me hours of research time, and the camps on here are definitely well picked and added."</h2>
+            <div class="uk-flex uk-inline">
+                <img src="{% static 'assets/user_testimonial.svg' %}" alt="">
+                <dl class="uk-description-list uk-description-list-divider uk-margin-small-left">
+                    <dt style="font-weight: 900;text-transform: capitalize;">May Andrews</dt>
+                    <dd>Professional hiker</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
