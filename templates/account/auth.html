@@ -12,29 +12,49 @@
      
             <div>
         
-                <form>
+                <form method="post">
+                    {% csrf_token %}
                     <fieldset class="uk-fieldset">
                 
                         <h1 class="">Start exploring camps from all around the world</h1>
-                
+                        {% if error %}
+                            <p class="uk-text-danger">{{error}}</p>
+                        {% endif %}
+                        
                         <div class="uk-margin">
                             <p class="uk-margin-small-bottom">Username</p>
-                            <!-- <input class="uk-input" type="text" placeholder="Input"> -->
-                            <input class="yelp-input" placeholder="johndoe_91" type="text" name="" id="">
+                            {{form.username}}
+                            {% for error in form.username.errors %}
+                                <p class="uk-text-meta uk-text-danger uk-margin-remove-top">{{error}}</p>
+                            {% endfor %}
                         </div>
                 
                         <div class="uk-margin">
                             <p class="uk-margin-small-bottom">Password</p>
-                            <!-- <input class="uk-input" type="text" placeholder="Input"> -->
-                            <input class="yelp-input" placeholder="Enter your Password" type="password" name="" id="">
+
+                            {% if login %} 
+
+                                {{form.password}}
+                                {% for error in form.password.errors %}
+                                    <p class="uk-text-meta uk-text-danger uk-margin-remove-top">{{error}}</p>
+                                {% endfor %}
+
+                            {% else %}
+
+                                {{form.password1}} 
+                                {% for error in form.password1.errors %}
+                                    <p class="uk-text-meta uk-text-danger uk-margin-remove-top">{{error}}</p>
+                                {% endfor %}
+
+                            {% endif %}
                         </div>
     
                         <button class="uk-button uk-button-secondary yelp-btn">{{btntext}}</button>
 
                         {% if login %}
-                        <span>Not a user yet? <a href="">Create an account</a></span>
+                        <span>Not a user yet? <a href="{% url 'account:signup' %}">Create an account</a></span>
                         {% else %}
-                        <span>Already a user? <a href="">Sign in</a></span>
+                        <span>Already a user? <a href="{% url 'account:login' %}">Sign in</a></span>
                         {% endif %}
                 
                     </fieldset>

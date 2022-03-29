@@ -51,7 +51,7 @@
                 </li>
 
                 <li class="home-btn">
-                    <a href="">Home</a>
+                    <a href="{% url 'account:home' %}">Home</a>
                 </li>
 
             </ul>
@@ -61,19 +61,32 @@
 
             <ul class="uk-navbar-nav">
 
-                <li class="">
-                    <a href="{% url 'account:login' %}" class="uk-navbar-item" href="#">Login</a>
-                </li>
 
-                <li class="uk-parent">
-                    <button class="uk-button uk-button-secondary yelp-btn"><a href="{% url 'account:signup' %}">Create
-                            an account</a></button>
-                    <!-- <button class="uk-button uk-button-secondary">Secondary</button> -->
-                </li>
+                {% if user.is_authenticated %}
+
+                    <li class="">
+                        <a class="uk-navbar-item uk-text-muted">{{user.username}}</a>
+                    </li>
+
+                    <li class="">
+                        <a href="{% url 'account:logout' %}" class="uk-navbar-item">Logout</a>
+                    </li>
+
+                {% else %}
+
+                    <li class="">
+                        <a href="{% url 'account:login' %}" class="uk-navbar-item">Login</a>
+                    </li>
+
+                    <li class="uk-parent">
+                        <a href="{% url 'account:signup' %}"><button class="uk-button uk-button-secondary yelp-btn">Create
+                                    an account</button></a>
+                    </li>
+
+                {% endif %}
 
             </ul>
 
-            {% comment %} <div class=""> {% endcomment %}
                 <button class="hamburguer"
                     onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened')); document.querySelector('.menu-mobile').classList.toggle('opened');document.querySelector('body').classList.toggle('disabled')"
                     aria-label="Main Menu">
@@ -85,8 +98,6 @@
                             d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
                     </svg>
                 </button>
-                {% comment %}
-            </div> {% endcomment %}
 
         </div>
     </nav>
@@ -123,12 +134,14 @@
 
             <ul class="mobile-list">
 
-                <li><a class="uk-link-muted" href="">TESTE</a></li>
+                {% if user.is_authenticated %}
 
-                <li><a class="uk-link-muted" href="">TESTE2</a></li>
-
-                <li><a href="{% url 'account:signup' %}"><button class="uk-button uk-button-secondary yelp-btn yelp-btn-auto-width">Create
-                    an account</button></a></li>
+                    <li><p class="uk-text-muted">{{user.username|title}}</p></li>
+                    <li><a class="uk-link-muted" href="{% url 'account:logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a class="uk-link-muted" href="{% url 'account:login' %}">Login</a></li>
+                    <li><a href="{% url 'account:signup' %}"><button class="uk-button uk-button-secondary yelp-btn yelp-btn-auto-width">Create an account</button></a></li>
+                {% endif %}
 
             </ul>
 
@@ -137,22 +150,6 @@
 
     <script src="{% static 'js/uikit.min.js' %}"></script>
     <script src="{% static 'js/uikit-icons.min.js' %}"></script>
-    <script>
-        function functiondisable() {
-            // To get the scroll position of current webpage
-            TopScroll = window.pageYOffset || document.documentElement.scrollTop;
-            LeftScroll = window.pageXOffset || document.documentElement.scrollLeft;
-
-            // if scroll happens, set it to the previous value
-            window.onscroll = function () {
-                window.scrollTo(LeftScroll, TopScroll);
-            };
-        }
-
-        function functionenable() {
-            window.onscroll = function () { };
-        }
-    </script>
 </body>
 
 </html>
