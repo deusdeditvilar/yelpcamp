@@ -5,23 +5,23 @@
 
 ### Frameworks used for this project:
 
--
+- #### Back-End - [Django](https://www.djangoproject.com/)
 
--
+- #### Front-End - [UiKit](https://getuikit.com/) / [Bootstrap](https://getbootstrap.com/)
 
 ### Design Images:
 
 |                                         | **Desktop View**                                         | **Tablet View**                                         | **Mobile View**                                         |
 |-----------------------------------------|----------------------------------------------------------|---------------------------------------------------------|---------------------------------------------------------|
-|             **Landing Page**            | [See](#landing-page-desktop-view)                        | [See](#landing-page-tablet-view)                        | [See](#landing-page-mobile-view)                        |
-|       **Search Page (Logged in)**       | [See](#search-page-logged-in-desktop-view)               | [See](#search-page-logged-in-tablet-view)               | [See](#search-page-logged-in-mobile-view)               |
-|     **Search Page (Not Logged in)**     | [See](#search-page-not-logged-in-desktop-view)           | [See](#search-page-not-logged-in-tablet-view)           | [See](#search-page-not-logged-in-mobile-view)           |
-|             **Sign Up Page**            | [See](#sign-up-page-desktop-view)                        | [See](#sign-up-page-tablet-view)                        | [See](#sign-up-page-mobile-view)                        |
-|             **Sign In Page**            | [See](#sign-in-page-desktop-view)                        | [See](#sign-in-page-tablet-view)                        | [See](#sign-in-page-mobile-view)                        |
-|            **Add Campground**           | [See](#add-new-campground-desktop-view)                  | [See](#add-new-campground-tablet-view)                  | [See](#add-new-campground-mobile-view)                  |
-| **Individual Campground Not Logged In** | [See](#individual-campground-not-logged-in-desktop-view) | [See](#individual-campground-not-logged-in-tablet-view) | [See](#individual-campground-not-logged-in-mobile-view) |
-|   **Individual Campground Logged In**   | [See](#individual-campground-logged-in-desktop-view)     | [See](#individual-campground-logged-in-tablet-view)     | [See](#individual-campground-logged-in-mobile-view)     |
-|             **Add Comment**             | [See](#add-new-comment-desktop-view)                     | [See](#add-new-comment-tablet-view)                     | [See](#add-new-comment-mobile-view)                     |
+|             **Landing Page**            | [See](#landing-page-desktop-view-)                       | [See](#landing-page-tablet-view-)                       | [See](#landing-page-mobile-view-)                       |
+|       **Search Page (Logged in)**       | [See](#search-page-logged-in-desktop-view-)              | [See](#search-page-logged-in-tablet-view-)              | [See](#search-page-logged-in-mobile-view-)              |
+|     **Search Page (Not Logged in)**     | [See](#search-page-not-logged-in-desktop-view-)          | [See](#search-page-not-logged-in-tablet-view-)          | [See](#search-page-not-logged-in-mobile-view-)          |
+|             **Sign Up Page**            | [See](#sign-up-page-desktop-view-)                       | [See](#sign-up-page-tablet-view-)                       | [See](#sign-up-page-mobile-view-)                       |
+|             **Sign In Page**            | [See](#sign-in-page-desktop-view-)                       | [See](#sign-in-page-tablet-view)                        | [See](#sign-in-page-mobile-view-)                       |
+|            **Add Campground**           | [See](#add-new-campground-desktop-view-)                 | [See](#add-new-campground-tablet-view-)                 | [See](#add-new-campground-mobile-view-)                 |
+| **Individual Campground Not Logged In** | [See](#individual-campground-not-logged-in-desktop-view-)| [See](#individual-campground-not-logged-in-tablet-view-)| [See](#individual-campground-not-logged-in-mobile-view-)|
+|   **Individual Campground Logged In**   | [See](#individual-campground-logged-in-desktop-view-)    | [See](#individual-campground-logged-in-tablet-view-)    | [See](#individual-campground-logged-in-mobile-view-)    |
+|             **Add Comment**             | [See](#add-new-comment-desktop-view-)                    | [See](#add-new-comment-tablet-view-)                    | [See](#add-new-comment-mobile-view-)                    |
 # Landing Page Desktop View [&#129045;](#design-images)
 
 ![Landing Page Desktop View](/media/Design/landing_page_desktop_view.jpg)
