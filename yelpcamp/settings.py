@@ -78,10 +78,30 @@ WSGI_APPLICATION = 'yelpcamp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'OPTIONS': {
+                'options': '-c search_path=public'
+        },
+        'NAME': 'dc22gdh13im777',
+        'HOST': 'ec2-34-231-63-30.compute-1.amazonaws.com',
+        'USER': 'igzbygpexevbop', #user_api
+        'PASSWORD': 'b0dbe30b0b3a1be66e1a56943dfd32ae0dc8a0303cab38e1a9e1e82473cad10f', #ApIdo@app!?
+        'PORT': '5432',
+        'POOL_OPTIONS': {
+            'pool_size': 10,
+            'max_overflow': 1,
+            'timeout': 20,
+        }
     }
 }
 
