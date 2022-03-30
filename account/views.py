@@ -7,13 +7,23 @@ from django.views import View
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from campgrounds.models import Campground
+from campgrounds.filters import CampgroundFilter
 
 
 def landing(request):
     return render(request,'dashboard/landing.html')
 
 def home(request):
-    return render(request,'dashboard/home.html')
+    if request.GET:
+
+        filters = request.GET.copy()
+        queryset = Campground.objects.all()
+
+        filtro = CampgroundFilter(filters, queryset=queryset)
+    filtro = CampgroundFilter(request.GET, queryset=Campground.objects.all())
+
+    return render(request, 'dashboard/home.html', {'filter': filtro,'camps':filtro.qs})
 
 
 class SignUpView(FormView):
@@ -45,18 +55,18 @@ class LoginView(View):
     
     def post(self, request):
         form = LoginForm(data=request.POST)
+        next = request.GET.get("next")
         
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
-            print(form.cleaned_data)
 
-            if username and password \
-                and authenticate(username=username, password=password):
+            if username and password and authenticate(username=username, password=password):
                 user = User.objects.get(Q(username__iexact=username))
                 login(request, user)
+                if next:
+                    return HttpResponseRedirect(next)
                 return HttpResponseRedirect(reverse('account:home'))
-            pass
         
         data = { 
             'form': form,

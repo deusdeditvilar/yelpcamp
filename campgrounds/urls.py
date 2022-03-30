@@ -6,8 +6,7 @@ from .views import *
 app_name = "campgrounds"
 
 urlpatterns = [
-    path("add/",add,name="add"),
-    path("individual/",ind,name="ind"),
-    path("comment/",comment,name="comment"),
-
+    path("individual/<int:pk>/",campground,name="individual"),
+    path("comment/<int:pk>",comment,name="comment"),
+    path("add/",AddCampground.as_view(),name="add")
 ]

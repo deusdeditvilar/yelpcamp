@@ -1,0 +1,60 @@
+{% extends 'menu.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="uk-section uk-padding-large" style="background-color: #f9f6f1;">
+        <div style="max-width: 400px;">
+
+            <h2 style="font-weight: 800;">Welcome to YelpCamp!</h2>
+            <p class="uk-margin-small">View our hand-picked campgrounds from all over the world, or add your own.</p>
+
+            <form method="get">
+                <div class="uk-margin">
+                    <div>
+
+                        <div class="uk-inline" >
+                            <span class="uk-form-icon" uk-icon="icon: search"></span>
+                            {{filter.form.name}}
+
+                        </div>
+                        <button class="uk-button uk-button-secondary uk-margin-small">Search</button>
+
+                    </div>
+                    <a class="uk-link-muted" href="{% url 'campgrounds:add' %}">Or add your own campground</a>
+                </div>
+            </form>
+
+        </div>
+</div>
+
+<div class="uk-section uk-margin-large-bottom">
+
+    <div class="uk-child-width-1-2@s uk-child-width-1-2@m uk-child-width-1-3@l " uk-grid uk-height-match="target: > div > .uk-card">
+
+        {% for camp in camps %}
+        <div>
+
+            <div class="uk-card uk-card-small uk-card-default uk-padding-small camp-card">
+
+                <div class="uk-card-media-top">
+                    <img src="{{camp.image}}" alt="">
+                </div>
+
+                <div class="body" >
+                    <p class="camp-card-title">{{camp.name}}</p>
+                    <p class="camp-card-desc uk-margin-large-right">{{camp.description}}</p>
+                    <div class="place-btn" style="margin-top: auto;">
+                    <a href="{% url 'campgrounds:individual' camp.id %}"><button class="uk-button uk-button-default camp-card-btn">View Campground</button></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}
