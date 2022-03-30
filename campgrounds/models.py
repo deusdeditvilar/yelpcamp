@@ -14,7 +14,7 @@ class Campground(models.Model):
     address = models.CharField(max_length=100)
 
 class Comment(models.Model):
-    comment = models.CharField(max_length=100,blank=False,null=False)
+    comment = models.CharField(max_length=300,blank=False,null=False)
     campground = models.ForeignKey(Campground, verbose_name=("Campground"), on_delete=models.CASCADE)
     user = models.ForeignKey(User, verbose_name="Created By", on_delete=models.PROTECT)
     created_at = models.DateTimeField("Created at", auto_now=True, auto_now_add=False)

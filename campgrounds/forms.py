@@ -14,7 +14,7 @@ class CampgroundForm(forms.ModelForm):
 
 class CommentForm(forms.ModelForm):
     
-    comment = forms.CharField(label='Description', widget=forms.Textarea(attrs={'class': 'yelp-input','placeholder':"This was probably the best camp i've visited this past year, definitely recommend visiting any time soon."}))
+    comment = forms.CharField(label='Description', widget=forms.Textarea(attrs={'class': 'yelp-input','maxlength':300,'placeholder':"This was probably the best camp i've visited this past year, definitely recommend visiting any time soon."}))
 
     class Meta:
         model = Comment

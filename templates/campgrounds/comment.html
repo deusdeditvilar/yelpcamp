@@ -15,6 +15,9 @@
                 <div class="uk-margin">
                     <p class="yelp-label">Description</p>
                     {{form.comment}}
+                    {% for error in form.comment.errors %}
+                    <p class="uk-text-meta uk-text-danger">{{error}}</p>
+                    {% endfor %}
                     <button class="uk-button uk-button-secondary yelp-btn">Post Comment</button>
                 </div>
         

@@ -41,5 +41,7 @@ def comment(request,pk):
             comment.created_at = timezone.now()
             form.save()
             return HttpResponseRedirect('/campgrounds/individual/'+str(pk))
+        else:
+            return render(request,'campgrounds/comment.html',{'form':form})
     form = CommentForm()
     return render(request,'campgrounds/comment.html',{'form':form})
