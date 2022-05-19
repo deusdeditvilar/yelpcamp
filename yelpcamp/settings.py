@@ -92,10 +92,10 @@ DATABASES = {
         'OPTIONS': {
                 'options': '-c search_path=public'
         },
-        'NAME': 'dc22gdh13im777',
-        'HOST': 'ec2-34-231-63-30.compute-1.amazonaws.com',
-        'USER': 'igzbygpexevbop', #user_api
-        'PASSWORD': 'b0dbe30b0b3a1be66e1a56943dfd32ae0dc8a0303cab38e1a9e1e82473cad10f', #ApIdo@app!?
+        'NAME': 'dbjqoers3plnhp',
+        'HOST': 'ec2-34-194-158-176.compute-1.amazonaws.com',
+        'USER': 'nrzxkdsssgtjnv',
+        'PASSWORD': 'c13b18380566248e8004c0574b50346755cc2a2b90fc632c5153696cac6e3cf7',
         'PORT': '5432',
         'POOL_OPTIONS': {
             'pool_size': 10,
